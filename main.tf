@@ -257,7 +257,7 @@ resource "aws_launch_template" "bastion_launch_template" {
   }
   network_interfaces {
     associate_public_ip_address = var.associate_public_ip_address
-    security_groups             = [aws_security_group.bastion_host_security_group.id]
+    security_groups             = concat([aws_security_group.bastion_host_security_group.id], var.additional_security_groups)
     delete_on_termination       = true
   }
   iam_instance_profile {
