@@ -136,3 +136,9 @@ variable "instance_type" {
   description = "Instance size of the bastion"
   default     = "t3.nano"
 }
+
+variable "additional_security_groups" {
+  description = "Additional security groups"
+  type        = list(string)
+  default     = []
+}
